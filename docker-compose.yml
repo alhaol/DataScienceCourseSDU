@@ -61,14 +61,6 @@ services:
     env_file:
       - ./hadoop.env
 
-  nodemanager2:
-    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.1.2-java8
-    container_name: nodemanager2
-    environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864 resourcemanager:8088"
-    env_file:
-      - ./hadoop.env
-
   historyserver:
     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.1.2-java8
     container_name: historyserver

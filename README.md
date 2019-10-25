@@ -31,10 +31,10 @@ docker stack deploy -c docker-compose-v3.yml hadoop
 Run `docker network inspect` on the network (e.g. `dockerhadoop_default`) to find the IP the hadoop interfaces are published on. Access these interfaces with the following URLs:
 
 * Namenode (Master): http://<dockerhadoop_IP_address>:9870/dfshealth.html#tab-overview
-* Datanode (Slaves): http://<dockerhadoop_IP_address>:9864/
+* Datanode (Slaves - Worker Nodes): http://<dockerhadoop_IP_address>:9864/
 * History server (Stores the jobs): http://<dockerhadoop_IP_address>:8188/applicationhistory
-* Nodemanager: http://<dockerhadoop_IP_address>:8042/node
-* Resource manager: http://<dockerhadoop_IP_address>:8088/
+* Nodemanager (Node Orchestrator): http://<dockerhadoop_IP_address>:8042/node
+* Resource manager (Yarn): http://<dockerhadoop_IP_address>:8088/
 
 
 
