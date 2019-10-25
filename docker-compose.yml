@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  namenode:
+  namenode: #Master (metadata/chunk)
     image: bde2020/hadoop-namenode:2.0.0-hadoop3.1.2-java8
     container_name: namenode
     ports:
@@ -13,7 +13,7 @@ services:
     env_file:
       - ./hadoop.env
 
-  datanode1:
+  datanode1: #Slave1
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.1.2-java8
     container_name: datanode1
     ports:
@@ -25,7 +25,7 @@ services:
     env_file:
       - ./hadoop.env
 
-  datanode2:
+  datanode2: #Slave2
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.1.2-java8
     container_name: datanode2
     ports:
@@ -37,7 +37,7 @@ services:
     env_file:
       - ./hadoop.env
 
-  datanode3:
+  datanode3: #Slave3
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.1.2-java8
     container_name: datanode3
     ports:
@@ -49,7 +49,7 @@ services:
     env_file:
       - ./hadoop.env
 
-  resourcemanager:
+  resourcemanager: #Yarn
     image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.1.2-java8
     container_name: resourcemanager
     ports:
@@ -59,7 +59,7 @@ services:
     env_file:
       - ./hadoop.env
 
-  nodemanager:
+  nodemanager: #Node Orchestrator (for containers)
     image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.1.2-java8
     container_name: nodemanager
     ports:
@@ -69,7 +69,7 @@ services:
     env_file:
       - ./hadoop.env
 
-  historyserver:
+  historyserver: #Job Store
     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.1.2-java8
     container_name: historyserver
     ports:
