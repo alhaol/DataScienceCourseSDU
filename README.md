@@ -4,10 +4,19 @@ The course/repo is run/maintained by Jakob Hviid <jah@mmmi.sdu.dk> and Fisayo Ca
 
 ## Setup
 
-In the root directory run:
+In the root directory run the following from an administrative terminal:
 
 ```bash
 docker-compose up -d
+addroute.cmd
+```
+
+also, add a file to the HDFS setup by attaching to the namenode and running:
+
+```bash
+apt update
+apt install wget
+wget -O alice.txt https://www.gutenberg.org/files/11/11-0.txt
 ```
 
 A sample of how to connect to spark is provided in example.py
