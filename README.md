@@ -17,14 +17,15 @@ also, add a file to the HDFS setup by attaching to the namenode and running:
 apt update
 apt install wget
 wget -O alice.txt https://www.gutenberg.org/files/11/11-0.txt
+hdfs dfs -put alice.txt /
 ```
 
-A sample of how to connect to spark is provided in example.py
+A sample of how to connect to spark is provided in example.py, which currently reads the alice.txt file and makes a word count.
 
 ## Credits
 
 This repo consists of several components created by Data Science Europe, but has been restructured into a part of a course run at the University of Southern Denmark.
-The repos are as follows
+The repositories are as follows:
 
 - https://github.com/big-data-europe/docker-hadoop
 - https://github.com/big-data-europe/docker-spark
