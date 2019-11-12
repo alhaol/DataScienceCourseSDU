@@ -33,6 +33,10 @@ The first time it runs, it will take several minutes to complete. Subsequent run
 
 Note, to make this work, the container is attached to the "hadoop" network that is created by the docker-compose file. Also, the docker-compose file has been changed since the initial setup, which means it will have to be updated if you are running your own version. The changed components are only related to the network section of the file (added name) and the docker-compose version (changed to 3.5).
 
+## Docker compose cheat sheet
+
+Take a look [here](https://gabrieltanner.org/blog/docker-compose).
+
 ## Credits
 
 This repo consists of several components created by Data Science Europe, but has been restructured into a part of a course run at the University of Southern Denmark.
