@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.5"
 
 services:
   namenode: #Master (metadata/chunk)
@@ -126,6 +126,7 @@ services:
 
 networks:
   cscourse:
+    name: hadoop
     ipam:
       config:
         - subnet: 172.200.0.0/24
