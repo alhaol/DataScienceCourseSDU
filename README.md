@@ -42,5 +42,5 @@ Take a look [here](https://gabrieltanner.org/blog/docker-compose).
 This repo consists of several components created by Data Science Europe, but has been restructured into a part of a course run at the University of Southern Denmark.
 The repositories are as follows:
 
-- https://github.com/big-data-europe/docker-hadoop
-- https://github.com/big-data-europe/docker-spark
+- <https://github.com/big-data-europe/docker-hadoop>
+- <https://github.com/big-data-europe/docker-spark>
