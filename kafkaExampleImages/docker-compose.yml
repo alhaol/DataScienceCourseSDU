@@ -64,33 +64,6 @@ services:
       kafka_network:
         ipv4_address: 172.200.1.103
 
-  # producer1:
-  #   build:
-  #     context: producer
-  #     dockerfile: DockerFile
-  #   depends_on:
-  #     - kafka1
-  #     - kafka2
-  #     - kafka3
-  #   environment:
-  #     KAFKA_BROKERS: "172.200.1.101:2180, 172.200.1.102:2180, 172.200.1.103:2180"
-  #   networks:
-  #     kafka_network:
-  #       ipv4_address: 172.200.1.110
-  # consumer1:
-  #   build:
-  #     context: consumer
-  #     dockerfile: DockerFile
-  #   depends_on:
-  #     - kafka1
-  #     - kafka2
-  #     - kafka3
-  #   environment:
-  #     KAFKA_BROKERS: "172.200.1.101:2180, 172.200.1.102:2180, 172.200.1.103:2180"
-  #   networks:
-  #     kafka_network:
-  #       ipv4_address: 172.200.1.120
-
 networks:
   kafka_network:
     name: kafkaNetwork
