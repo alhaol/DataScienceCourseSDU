@@ -47,6 +47,7 @@ The producer is already implemented as an, but the consumer should be implemente
 ## Docker compose cheat sheet
 
 Take a look [here](https://gabrieltanner.org/blog/docker-compose).
+For more background on Docker, see their official [docker 101 slides](https://github.com/mikegcoleman/docker101/blob/master/Docker_101_Workshop_DockerCon.pdf).
 
 ## Credits
 
