@@ -3,7 +3,9 @@
         "addroute",
         "fsan",
         "hdfs",
+        "ipam",
         "namenode",
-        "pyspark"
+        "pyspark",
+        "subnet"
     ]
 }
