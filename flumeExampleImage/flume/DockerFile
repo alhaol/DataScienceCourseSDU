@@ -1,0 +1,18 @@
+FROM ubuntu:18.04
+
+LABEL Name=consumer Version=0.0.1
+
+RUN apt-get update 
+RUN apt-get install -y wget
+RUN apt-get autoremove -y
+RUN apt-get clean
+
+RUN wget http://ftp.download-by.net/apache/flume/1.9.0/apache-flume-1.9.0-bin.tar.gz
+RUN tar -zxvf apache-flume-1.9.0-bin.tar.gz
+RUN rm apache-flume-1.9.0-bin.tar.gz
+
+RUN echo 'export FLUME_HOME=/apache-flume-1.9.0-bin/' >> ~/.bashrc
+RUN echo 'export PATH=$PATH:$FLUME_HOME/bin/' >> ~/.bashrc
+
+
+
