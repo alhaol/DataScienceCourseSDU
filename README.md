@@ -1,6 +1,6 @@
 # Data Science Course at SDU
 
-The course/repo is run/maintained by Jakob Hviid <jah@mmmi.sdu.dk> and Fisayo Caleb Sangogboye <fsan@mmmi.sdu.dk>.
+The course/repo is run/maintained by Jakob Hviid <jah@mmmi.sdu.dk>.
 
 ## Setup
 
