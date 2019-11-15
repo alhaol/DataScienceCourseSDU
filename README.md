@@ -33,6 +33,17 @@ The first time it runs, it will take several minutes to complete. Subsequent run
 
 Note, to make this work, the container is attached to the "hadoop" network that is created by the docker-compose file. Also, the docker-compose file has been changed since the initial setup, which means it will have to be updated if you are running your own version. The changed components are only related to the network section of the file (added name) and the docker-compose version (changed to 3.5).
 
+## Kafka
+
+A Kafka cluster can be found in the kafkaExampleImages folder. Simply run a `docker-compose up`, and the cluster should be running. All machines interacting with the cluster should be connecting to the `kafkaNetwork`.
+
+Two images are provided:
+
+- Producer
+- Consumer
+
+The producer is already implemented as an, but the consumer should be implemented by the students.
+
 ## Docker compose cheat sheet
 
 Take a look [here](https://gabrieltanner.org/blog/docker-compose).
