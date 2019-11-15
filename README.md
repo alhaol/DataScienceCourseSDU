@@ -42,7 +42,7 @@ Two images are provided:
 - Producer
 - Consumer
 
-The producer is already implemented as an, but the consumer should be implemented by the students.
+The producer is already implemented as an, but the consumer should be implemented by the students. Both images are automatically built bu running the `run.cmd` commands (On linux/mac `cat` them, and run the commands yourself).
 
 ## Docker compose cheat sheet
 
