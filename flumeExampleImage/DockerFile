@@ -20,11 +20,29 @@ RUN mv apache-flume-1.9.0-bin flume
 RUN echo 'export FLUME_HOME=/flume/' >> ~/.bashrc
 RUN echo 'export PATH=$PATH:$FLUME_HOME/bin/' >> ~/.bashrc
 RUN echo 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/' >> ~/.bashrc
+RUN export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/
 
 # Readying for example code
 EXPOSE 44444
 
 WORKDIR /flume
-ADD flume.conf /flume/conf/
 
-CMD /flume/bin/flume-ng agent --conf conf --conf-file /flume/conf/flume.conf --name a1 -Dflume.root.logger=INFO,console
+ADD flume-console.conf /flume/conf/
+ADD flume-twitter-to-console.conf /flume/conf/
+ADD flume-twitter-to-file.conf /flume/conf/
+ADD flume-twitter-to-hdfs.conf /flume/conf/
+
+
+
+# Console Example
+# flume-ng agent --conf conf --conf-file ./conf/flume-console.conf --name a1 -Dflume.root.logger=INFO,console
+
+# Twitter HDFS Example
+# flume-ng agent --conf ./conf/ -f ./conf/flume-twitter-hdfs.conf  --name TwitterAgent
+
+# Twitter Console Example
+# flume-ng agent --conf ./conf/ -f ./conf/flume-twitter-to-console.conf --name TwitterAgent -Dflume.root.logger=INFO,console
+
+# Twitter File Example
+# mkdir twitterlogs
+# flume-ng agent --conf ./conf/ -f ./conf/flume-twitter-to-file.conf --name TwitterAgent
