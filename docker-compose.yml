@@ -66,32 +66,30 @@ services:
       cscourse:
         ipv4_address: 172.200.0.5
 
-  resourcemanager: #Yarn
-    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.1.2-java8
-    container_name: resourcemanager
-    ports:
-      - 8088:8088
-    environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864"
-    env_file:
-      - ./hadoop.env
-    networks:
-      cscourse:
-        ipv4_address: 172.200.0.6
-
-  nodemanager: #Node Orchestrator (for containers)
-    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.1.2-java8
-    container_name: nodemanager
-    ports:
-      - 8042:8042
-    environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864 resourcemanager:8088"
-    env_file:
-      - ./hadoop.env
-    networks:
-      cscourse:
-        ipv4_address: 172.200.0.7
-
+  # resourcemanager: #Yarn
+  #   image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.1.2-java8
+  #   container_name: resourcemanager
+  #   ports:
+  #     - 8088:8088
+  #   environment:
+  #     SERVICE_PRECONDITION: "namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864"
+  #   env_file:
+  #     - ./hadoop.env
+  #   networks:
+  #     cscourse:
+  #       ipv4_address: 172.200.0.6
+  # nodemanager: #Node Orchestrator (for containers)
+  #   image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.1.2-java8
+  #   container_name: nodemanager
+  #   ports:
+  #     - 8042:8042
+  #   environment:
+  #     SERVICE_PRECONDITION: "namenode:9870 datanode1:9864 datanode2:9864 datanode3:9864 resourcemanager:8088"
+  #   env_file:
+  #     - ./hadoop.env
+  #   networks:
+  #     cscourse:
+  #       ipv4_address: 172.200.0.7
   # historyserver: #Job Store
   #   image: bde2020/hadoop-historyserver:2.0.0-hadoop3.1.2-java8
   #   container_name: historyserver
