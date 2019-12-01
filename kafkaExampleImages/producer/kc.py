@@ -48,7 +48,7 @@ class KafkaClient():
 
     def delete_topics(self, topics:list):
         self.kafka_admin.delete_topics(topics)
-
+        
     def subscribe_to_env(self, key:str, group:str, topic:str):
         self.subscribe(key, self.__brokers, group, topic)
 
@@ -78,8 +78,8 @@ class KafkaClient():
     def produce(self, topic:str, brokers:list, message):
         if self.__producer is None:
             self.__producer = KafkaProducer(
-                    bootstrap_servers=brokers#,                              # list of brokers -> ['localhost:9092', ...]
-                    #value_serializer=lambda x: dumps(x).encode('utf-8')     # function that defines how the data should be serialized before published
+                    bootstrap_servers=brokers,                              # list of brokers -> ['localhost:9092', ...]
+                    value_serializer=lambda x: dumps(x).encode('utf-8')     # function that defines how the data should be serialized before published
             )
         self.__producer.send(topic, value=message)
 
@@ -93,6 +93,10 @@ class KafkaClient():
         return list(self.kafka_admin.list_topics().topics.keys())
 
     def consume(self, key:str, rh):
+        """
+        consume receives a response handler (rh)
+        starts the response handler in a separate thread (if that was truly possible in python)
+        """
         def handle():
             for message in self.get_consumer(key):
                 if self.exit == True:
@@ -114,9 +118,3 @@ class KafkaClient():
                 pass
             del self.__consumers[key]
         self.__consumers = {}
-        print("Closed connection to Kafka.")
-
-    
-    
-
-
