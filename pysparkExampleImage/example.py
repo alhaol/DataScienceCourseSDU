@@ -4,7 +4,7 @@ locale.getdefaultlocale()
 locale.getpreferredencoding()
 
 conf = SparkConf().set('spark.driver.host', '127.0.0.1')
-sc = SparkContext(master='local', appName='myAppName', conf=conf)
+sc = SparkContext(master='spark://spark-master:7077', appName='myAppName', conf=conf)
 
 files = "hdfs://namenode:9000/"
 txtFiles = sc.wholeTextFiles(files, 20)
